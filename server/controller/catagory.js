@@ -4,7 +4,8 @@ const Category = require('../modal/Category')
 exports.createCategory = asyncHandler(async (req,res)=>{
     const title = req.body.title.toLowerCase();
     const user = req.user._id;
-    const searchCategory = await Category.findOne({title:title})
+    const searchCategory = await Category.findOne({ title: title })
+    console.log(searchCategory);
     if(searchCategory) {
         res.status(409)
         throw new Error("Category already exists")

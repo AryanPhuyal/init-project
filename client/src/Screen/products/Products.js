@@ -32,7 +32,7 @@ function Products() {
               {!loading && !error && (
                 <>
                   {products.map((p) => (
-                    <tr>
+                    <tr key={ p._id}>
                       <td>{p.name}</td>
                       <td>{p.price}</td>
                       <td>{p.description}</td>

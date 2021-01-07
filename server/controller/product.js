@@ -2,9 +2,10 @@ const asyncHandler = require('express-async-handler')
 const Product = require('../modal/Product');
 
 exports.createProduct = asyncHandler(async (req, res) => {
-    const {name, categoryId, price, description} = req.body
+    console.log(req.body)
+    const { name, category, price, description } = req.body
     const user = req.user._id;
-    const product = new Product({name, category: categoryId, price, description});
+    const product = new Product({name, category, price, description,user});
     await product.save();
     res.json({success: true, message: "Successfully created user"})
 })

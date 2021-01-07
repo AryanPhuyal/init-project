@@ -36,7 +36,7 @@ const addProductStart = (state, action) => {
 }
 const addProductSuccess = (state, action) => {
     const products = state.products;
-    products.upshift(action.payload)
+    products.unshift(action.payload)
     return updateObject(state, {
         loading: false,
         products:products

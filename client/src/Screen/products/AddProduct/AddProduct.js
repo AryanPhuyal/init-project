@@ -9,7 +9,7 @@ const AddProduct = () => {
     const { register, errors, handleSubmit } = useForm();
     const {token} = useSelector(state => state.auth)
     const dispatch = useDispatch()
-    const submitHandler = (data) => {
+  const submitHandler = (data) => {
         dispatch(addProduct(token,{...data}))
     }
   return (

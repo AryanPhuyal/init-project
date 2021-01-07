@@ -45,11 +45,12 @@ const addProductFAil = (err) => {return {
 }
 };
     
-export const addProduct = (token,{name,category,description,price}) =>async dispatch => {
+export const addProduct = (token,{name,categoryId,description,price}) =>async dispatch => {
     dispatch(addProductStart())
+    console.log(categoryId)
     try {
         const {data} = await axios.post('/products', {
-            name,categoryId:category,price,description
+            name,category:categoryId,price,description
         }, {
                 headers: {
                 authorization:token
